@@ -1,0 +1,5 @@
+Credentials cache: API:ED3B3A28-8DBE-4338-8BB6-0969DCE89DAE
+        Principal: fcatusse@42.FR
+
+		  Issued                Expires             Flags    Principal
+		  Aug 27 11:45:43 2018  Sep  3 11:45:19 2018  FPIA   krbtgt/42.FR@42.FR
