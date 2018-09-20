@@ -1,31 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   sort_integer_table.c                               :+:      :+:    :+:   */
+/*   ft_foreach.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fcatusse <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/09/16 12:08:31 by fcatusse          #+#    #+#             */
-/*   Updated: 2018/09/20 18:48:14 by fcatusse         ###   ########.fr       */
+/*   Created: 2018/09/19 18:50:21 by fcatusse          #+#    #+#             */
+/*   Updated: 2018/09/20 00:51:26 by fcatusse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void		ft_sort_integer_table(int *tab, int size)
+void	ft_foreach(int *tab, int length, void (*f)(int))
 {
-	int i;
-	int tmp;
+	int		i;
+	int		len;
 
 	i = 0;
-	while (i < size)
+	len = length;
+	while (i < len)
 	{
-		if (tab[i] > tab[i + 1])
-		{
-			tmp = tab[i + 1];
-			tab[i + 1] = tab[i];
-			tab[i] = tmp;
-			i = 0;
-		}
-		else
-			i++;
+		f(tab[i]);
+		i++;
 	}
 }

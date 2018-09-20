@@ -1,31 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   sort_integer_table.c                               :+:      :+:    :+:   */
+/*   ft_count_if.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fcatusse <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/09/16 12:08:31 by fcatusse          #+#    #+#             */
-/*   Updated: 2018/09/20 18:48:14 by fcatusse         ###   ########.fr       */
+/*   Created: 2018/09/19 20:57:03 by fcatusse          #+#    #+#             */
+/*   Updated: 2018/09/20 11:24:45 by fcatusse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void		ft_sort_integer_table(int *tab, int size)
+int		ft_count_if(char **tab, int (*f)(char*))
 {
-	int i;
-	int tmp;
+	int		i;
+	int		count;
 
 	i = 0;
-	while (i < size)
+	count = 0;
+	while (tab[i] != 0)
 	{
-		if (tab[i] > tab[i + 1])
-		{
-			tmp = tab[i + 1];
-			tab[i + 1] = tab[i];
-			tab[i] = tmp;
-			i = 0;
-		}
-		else
-			i++;
+		if (f(tab[i]))
+			count++;
+		i++;
 	}
+	return (count);
 }

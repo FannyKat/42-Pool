@@ -1,31 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   sort_integer_table.c                               :+:      :+:    :+:   */
+/*   ft_any.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fcatusse <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/09/16 12:08:31 by fcatusse          #+#    #+#             */
-/*   Updated: 2018/09/20 18:48:14 by fcatusse         ###   ########.fr       */
+/*   Created: 2018/09/19 20:00:31 by fcatusse          #+#    #+#             */
+/*   Updated: 2018/09/20 00:52:01 by fcatusse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void		ft_sort_integer_table(int *tab, int size)
+int		ft_any(char **tab, int (*f)(char*))
 {
-	int i;
-	int tmp;
+	int		i;
 
 	i = 0;
-	while (i < size)
+	while (tab[i] != 0)
 	{
-		if (tab[i] > tab[i + 1])
-		{
-			tmp = tab[i + 1];
-			tab[i + 1] = tab[i];
-			tab[i] = tmp;
-			i = 0;
-		}
-		else
-			i++;
+		if (f(tab[i]) == 1)
+			return (1);
+		i++;
 	}
+	return (0);
 }
